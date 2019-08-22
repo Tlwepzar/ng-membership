@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core'
+import { Subject } from 'rxjs'
 
 @Injectable()
 export class EventService {
-    getEvents () {
-        return EVENTS
+    getEvents() {
+        let subject = new Subject()
+        setTimeout(() => {subject.next(EVENTS); subject.complete(); },100)
+        return subject
+    }
+
+    getEvent(id:number) {
+        return EVENTS.find(event => event.id === id)
     }
 }
 
@@ -15,7 +22,7 @@ const EVENTS =  [
         time: '10:00 am',
         price: 199,
         entry: '( free for everyone under the age of 16 yrs old )',
-        imageURL: '/assets/images/angularconnect-shield.png',
+        imageUrl: '/assets/images/angularconnect-shield.png',
         location: {
             address: '54329 Gugulethu Scheme,',
             city: 'Kwa-Thema, 1575',
@@ -89,12 +96,17 @@ const EVENTS =  [
     },
     {
       id: 2,
-      name: 'ng-nl',
+      name: 'Cathrine\'s Talk',
       date: '4/15/2037',
       time: '9:00 am',
-      price: 950.00,
+      price: 1000.00,
       imageUrl: '/assets/images/ng-nl.png',
       onlineURL: 'https://lastown.io/events/',
+      location: {
+        address: '10543 Wellem, Gugulethu Scheme,',
+        city: 'Kwa-Thema, 1575',
+        country: 'South Africa',
+    },
       sessions: [
         {
           id: 1,

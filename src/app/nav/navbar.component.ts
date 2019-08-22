@@ -8,6 +8,7 @@ import { Component } from '@angular/core'
     #searchForm {margin-right: 100px;}
     #searchButton {margin-left: 20px;}
     @media (max-width:1200px) {#searchForm {displya:none}}
+    li > a.active { color: #CCFF00; }
     `
     ]
 })
