@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core'
+import { IEvent } from './shared/index'
 
 @Component({
     selector: 'event-thumbnail',
@@ -12,13 +13,13 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
         <span *ngSwitchCase="'10:00 am'">( Late Start )</span>
         <span *ngSwitchDefault>( Normal Start )</span>
     </div>
-    <div>Price: \R{{event?.price}} {{event.entry}} </div>
+    <div>Price: \R{{event?.price}}</div>
     <div [hidden]="!event?.location?.address">
         <span> Location: {{event?.location?.address}}</span>
         <span class="pad-left"> {{event?.location?.city}}, {{event?.location?.country}}</span>
     </div>
-    <div *ngIf="event?.onlineURL">
-        Online URL: {{event?.onlineURL}}
+    <div *ngIf="event?.onlineUrl">
+        Online URL: {{event?.onlineUrl}}
     </div>
 </div>
 `,
@@ -28,7 +29,7 @@ styles: [`
 `]
 })
 export class EventThumbnailComponent {
-    @Input() event:any;
+    @Input() event:IEvent;
     getStartTimeStyle():any {
         if (this.event && this.event.time === '8:00 am')
             return { color: '#003300', 'font-weight': 'bold'}

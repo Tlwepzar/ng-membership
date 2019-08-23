@@ -1,27 +1,33 @@
 import { Injectable } from '@angular/core'
-import { Subject } from 'rxjs'
+import { Subject, Observable } from 'rxjs'
+import { IEvent } from './event.model';
 
 @Injectable()
 export class EventService {
-    getEvents() {
-        let subject = new Subject()
-        setTimeout(() => {subject.next(EVENTS); subject.complete(); },100)
-        return subject
-    }
+  getEvents() :Observable<IEvent[]> {
+    let subject = new Subject<IEvent[]>()
+    setTimeout(() => {subject.next(EVENTS); subject.complete(); },100)
+    return subject
+  }
 
-    getEvent(id:number) {
-        return EVENTS.find(event => event.id === id)
-    }
+  getEvent(id:number):IEvent {
+    return EVENTS.find(event => event.id === id)
+  }
+
+  saveEvent(event){
+    event.id = 1001
+    event.session =[]
+    EVENTS.push(event)
+  }
 }
 
-const EVENTS =  [
+const EVENTS:IEvent[] =  [
     {
         id: 1,
         name: 'LasTown Connect',
-        date: '26/06/2020',
+        date: new Date('6/26/2020'),
         time: '10:00 am',
         price: 199,
-        entry: '( free for everyone under the age of 16 yrs old )',
         imageUrl: '/assets/images/angularconnect-shield.png',
         location: {
             address: '54329 Gugulethu Scheme,',
@@ -97,16 +103,11 @@ const EVENTS =  [
     {
       id: 2,
       name: 'Cathrine\'s Talk',
-      date: '4/15/2037',
+      date: new Date('4/15/2037'),
       time: '9:00 am',
       price: 1000.00,
       imageUrl: '/assets/images/ng-nl.png',
-      onlineURL: 'https://lastown.io/events/',
-      location: {
-        address: '10543 Wellem, Gugulethu Scheme,',
-        city: 'Kwa-Thema, 1575',
-        country: 'South Africa',
-    },
+      onlineUrl: 'https://lastown.io/events/',
       sessions: [
         {
           id: 1,
@@ -158,7 +159,7 @@ const EVENTS =  [
     {
       id: 3,
       name: 'ng-conf 2037',
-      date: '5/4/2037',
+      date: new Date('5/4/2037'),
       time: '9:00 am',
       price: 759.00,
       imageUrl: '/assets/images/ng-conf.png',
@@ -240,7 +241,7 @@ const EVENTS =  [
     {
       id: 4,
       name: 'UN Angular Summit',
-      date: '6/10/2037',
+      date: new Date('6/10/2037'),
       time: '8:00 am',
       price: 800.00,
       imageUrl: '/assets/images/basic-shield.png',
@@ -288,9 +289,9 @@ const EVENTS =  [
     },
     {
       id: 5,
-      name: 'ng-vegas',
-      date: '2/10/2037',
-      time: '10:00 am',
+      name: 'Hood-ng',
+      date: new Date('2/10/2037'),
+      time: '8:00 am',
       price: 400.00,
       imageUrl: '/assets/images/ng-vegas.png',
       location: {
@@ -322,6 +323,33 @@ const EVENTS =  [
           Dan Wahlin will show you how you can get started with Angular in 60ish minutes, 
           guaranteed!`,
           voters: ['bradgreen', 'igorminar', 'johnpapa']
+        }
+      ]
+    },
+    {
+      id: 6,
+      name: 'Clean Minds Summit',
+      date: new Date('6/10/2037'),
+      time: '10:00 am',
+      price: 800.00,
+      imageUrl: '/assets/images/basic-shield.png',
+      location: {
+        address: 'The UN Angular Center',
+        city: 'New York',
+        country: 'USA'
+      },
+      sessions: [
+        {
+          id: 1,
+          name: "Diversity in Tech",
+          presenter: "Sir Dave Smith",
+          duration: 2,
+          level: "Beginner",
+          abstract: `Yes, we all work with cyborgs and androids and Martians, but 
+          we probably don't realize that sometimes our internal biases can make it difficult for
+          these well-designed coworkers to really feel at home coding alongside us. This talk will
+          look at things we can do to recognize our biases and counteract them.`,
+          voters: ['bradgreen', 'igorminar']
         }
       ]
     }
