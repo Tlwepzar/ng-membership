@@ -6,6 +6,7 @@ import { AuthService } from '../events/user/auth.service';
     templateUrl: './navbar.component.html',
     styles: [`
     .nav.navbar-nav {font-size 15px;}
+    img { height: 50px; }
     #searchForm {margin-right: 100px;}
     #searchButton {margin-left: 20px;}
     @media (max-width:1200px) {#searchForm {displya:none}}

@@ -3,15 +3,15 @@
   
     <div class="row">
       <div class="col-md-11">
-        <h2>{{event?.name}} </h2>
+        <h2>{{event?.name}} {{event?.surname}}</h2>
       </div>
     </div>
   
     <div class="row">
       <div class="col-md-6">
-        <div><strong>Date:</strong> {{event?.date}}</div>
-        <div><strong>Time:</strong> {{event?.time}}</div>
-        <div><strong>Price:</strong> R{{event?.price}}</div>
+        <div><strong>Membership Number:</strong> {{event?.memberNo}}</div>
+        <div><strong>Identity Number:</strong> {{event?.identityNo}}</div>
+        <div><strong>Joined Date:</strong> {{event?.date}}</div>
       </div>
       <div class="col-md-6">
         <address [hidden]="!event?.location?.address">
@@ -20,20 +20,10 @@
           {{event?.location?.city}}, {{event?.location?.country}}
         </address>
       </div>
+      <a (click)="addSession()">Add Beneficiary</a>
     </div>
-
     <hr>
-
-    <div class="row">
-      <div class="col-md-2">
-        <h3 style="margin: 0">Session</h3>
-      </div>
-
-      <div>
-        <a (click)="addSession()">Add Session</a>
-      </div>
-    </div>
-
+    
     <session-list *ngIf="!addMode" [sessions]="event?.sessions"></session-list>
     <create-session *ngIf="addMode" (saveNewSession)="saveNewSession($event)" (cancelAddSession)="cancelAddSession()"></create-session>
 

@@ -29,16 +29,18 @@ export class EventService {
 const EVENTS:IEvent[] =  [
     {
         id: 1,
-        name: 'LasTown Connect',
-        date: new Date('6/26/2020'),
-        time: '10:00 am',
-        price: 199,
-        imageUrl: '/assets/images/angularconnect-shield.png',
+        name: 'Tshepang',
+        surname: 'Molefe',
+        memberNo: 'MTE019080',
+        identityNo: 9112263155080,
+        date: new Date('6/26/2020 16:32:01'),
+        imageUrl: '/assets/images/profile1.png',
         location: {
             address: '54329 Gugulethu Scheme,',
             city: 'Kwa-Thema, 1575',
             country: 'South Africa',
         },
+        status:'active',
       sessions: [
         {
           id: 1,
@@ -107,12 +109,14 @@ const EVENTS:IEvent[] =  [
     },
     {
       id: 2,
-      name: 'Cathrine\'s Talk',
+      name: 'Cathrine',
+      surname: 'Molefe',
+      memberNo: 'MTE022010',
+      identityNo: 8906223155080,
       date: new Date('4/15/2037'),
-      time: '9:00 am',
-      price: 1000.00,
       imageUrl: '/assets/images/ng-nl.png',
       onlineUrl: 'https://lastown.io/events/',
+      status:'active',
       sessions: [
         {
           id: 1,
@@ -163,16 +167,18 @@ const EVENTS:IEvent[] =  [
     },
     {
       id: 3,
-      name: 'ng-conf 2037',
+      name: 'Abednego',
+      surname: 'Mdluli',
+      memberNo: 'MTE0454340',
+      identityNo: 7111133665080,
       date: new Date('5/4/2037'),
-      time: '9:00 am',
-      price: 759.00,
       imageUrl: '/assets/images/ng-conf.png',
       location: {
         address: 'The Palatial America Hotel',
         city: 'Salt Lake City',
         country: 'USA'
       },
+      status:'Inactive',
       sessions: [
         {
           id: 1,
@@ -245,16 +251,18 @@ const EVENTS:IEvent[] =  [
     },
     {
       id: 4,
-      name: 'UN Angular Summit',
+      name: 'Brian',
+      surname: 'Mowkena',
+      memberNo: 'MTE0543190',
+      identityNo: 8606253155080,
       date: new Date('6/10/2037'),
-      time: '8:00 am',
-      price: 800.00,
       imageUrl: '/assets/images/basic-shield.png',
       location: {
         address: 'The UN Angular Center',
         city: 'New York',
         country: 'USA'
       },
+      status:'active',
       sessions: [
         {
           id: 1,
@@ -294,16 +302,18 @@ const EVENTS:IEvent[] =  [
     },
     {
       id: 5,
-      name: 'Hood-ng',
+      name: 'Lebo',
+      surname: 'Merahe',
+      memberNo: 'MTE880298',
+      identityNo: 8802189144080,
       date: new Date('2/10/2037'),
-      time: '8:00 am',
-      price: 400.00,
       imageUrl: '/assets/images/ng-vegas.png',
       location: {
         address: 'The Excalibur',
         city: 'Las Vegas',
         country: 'USA'
       },
+      status:'Inactive',
       sessions: [
         {
           id: 1,
@@ -333,16 +343,18 @@ const EVENTS:IEvent[] =  [
     },
     {
       id: 6,
-      name: 'Clean Minds Summit',
+      name: 'Busi',
+      surname: 'Nkosi',
+      memberNo: 'MTE456789',
+      identityNo: 92070822110080,
       date: new Date('6/10/2037'),
-      time: '10:00 am',
-      price: 800.00,
       imageUrl: '/assets/images/basic-shield.png',
       location: {
         address: 'The UN Angular Center',
         city: 'New York',
         country: 'USA'
       },
+      status:'active',
       sessions: [
         {
           id: 1,

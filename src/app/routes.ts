@@ -17,6 +17,6 @@ export const appRoutes:Routes = [
     { path: 'events/session/new', component: CreateSessionComponent },
     { path: '404', component: Error404Component },
     { path: '', redirectTo: '/events', pathMatch: 'full' },
-    { path: 'user', loadChildren: '/Users/tshepang/Documents/Angular/ng-fundamentals/src/app/events/user/user.module#UserModule'},
+    { path: 'user', loadChildren: '/Users/tshepang/Documents/VSC_Projects/source/membership-system-ng/src/app/events/user/user.module#UserModule'},
    
 ]
