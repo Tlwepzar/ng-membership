@@ -17,7 +17,7 @@ declare let toastr
             </div>
         </div>
     </div>
-    `
+    `,
 })
 export class MembersListComponent implements OnInit {
     members:IMember;

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Resolve } from '@angular/router'
+import { MemberService } from './shared/member.service';
 import { map } from 'rxjs/operators'
-import { MemberService } from './shared';
 
 @Injectable()
 

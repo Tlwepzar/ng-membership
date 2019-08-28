@@ -2,33 +2,24 @@
         <h3>Create Beneficiary</h3>
       </div>
       <div class="col-md-6">
-        <form [formGroup]="newSessionForm" (ngSubmit)="saveSession(newSessionForm.value)" autocomplete="off">
+        <form [formGroup]="newBeneficiaryForm" (ngSubmit)="saveBeneficiary(newBeneficiaryForm.value)" autocomplete="off">
           <div class="form-group" [ngClass]="{'error': name.invalid && name.dirty}">
-            <label for="sessionName">Beneficiary Name:</label>
+            <label for="beneficiaryName">Beneficiary Name:</label>
             <em *ngIf="name.invalid && name.dirty">Required</em>
-            <input formControlName="name" id="sessionName" type="text" class="form-control" placeholder="session name..." />
+            <input formControlName="name" id="beneficiaryName" type="text" class="form-control" placeholder="Beneficiary name..." />
           </div>
-          <div class="form-group" [ngClass]="{'error': presenter.invalid && presenter.dirty}">
-            <label for="eventDate">Beneficiary Surname:</label>
-            <em *ngIf="presenter.invalid && presenter.dirty">Required</em>
-            <input formControlName="presenter" id="presenter" type="text" class="form-control" placeholder="presenter..." />
+          <div class="form-group" [ngClass]="{'error': surname.invalid && surname.dirty}">
+            <label for="beneficiarySurname">Beneficiary Surname:</label>
+            <em *ngIf="surname.invalid && surname.dirty">Required</em>
+            <input formControlName="surname" id="beneficiarySurname" type="text" class="form-control" placeholder="Beneficiary surname..." />
           </div>
-          <div class="form-group" [ngClass]="{'error': presenter.invalid && presenter.dirty}">
-            <label for="eventDate">Beneficiary Identity No:</label>
-            <em *ngIf="presenter.invalid && presenter.dirty">Required</em>
-            <input formControlName="presenter" id="presenter" type="text" class="form-control" placeholder="presenter..." />
-          </div>
-          <div class="form-group" [ngClass]="{'error': duration.invalid && duration.dirty}">
-            <label for="duration">Gender:</label>
-            <em *ngIf="duration.invalid && duration.dirty">Required</em>
-            <select formControlName="duration" class="form-control">
-              <option value="">select gender..</option>
-              <option value="1">Male</option>
-              <option value="2">Female</option>
-            </select>
+          <div class="form-group" [ngClass]="{'error': identityNo.invalid && identityNo.dirty}">
+            <label for="BeneficiaryIdentityNo">Beneficiary Identity No:</label>
+            <em *ngIf="identityNo.invalid && identityNo.dirty">Required</em>
+            <input formControlName="identityNo" id="beneficiaryIdentityNo" type="text" class="form-control" placeholder="Beneficiary ID No..." />
           </div>
 
-          <button type="submit" [disabled]="newSessionForm.invalid" class="btn btn-primary">Save</button>
+          <button type="submit" [disabled]="newBeneficiaryForm.invalid" class="btn btn-primary">Save</button>
           <button type="button" (click)="cancel()" class="btn btn-default">Cancel</button>
         </form>
       </div>
