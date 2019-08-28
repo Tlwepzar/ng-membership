@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-fundamentals": {
+    "membership-system-ng": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-fundamentals",
+            "outputPath": "dist/membership-system-ng",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-fundamentals:build"
+            "browserTarget": "membership-system-ng:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-fundamentals:build:production"
+              "browserTarget": "membership-system-ng:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-fundamentals:build"
+            "browserTarget": "membership-system-ng:build"
           }
         },
         "test": {
@@ -108,7 +108,7 @@
         }
       }
     },
-    "ng-fundamentals-e2e": {
+    "membership-system-ng-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -117,11 +117,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng-fundamentals:serve"
+            "devServerTarget": "membership-system-ng:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-fundamentals:serve:production"
+              "devServerTarget": "membership-system-ng:serve:production"
             }
           }
         },
@@ -137,5 +137,5 @@
       }
     }
   },
-  "defaultProject": "ng-fundamentals"
+  "defaultProject": "membership-system-ng"
 }
