@@ -1,10 +1,10 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { IMember, restrictedWords, IBeneficiary  } from '../shared/index';
+import { IBeneficiary, restrictedWords  } from '../shared/index';
 
 @Component({
-    selector: 'create-session',
-    templateUrl: 'create-session.component.html',
+    selector: 'create-beneficiary',
+    templateUrl: 'create-beneficiary.component.html',
     styles: [`
     em {float:right; color:#E05C65; padding-left:10px;}
     .error input, .error select, .error textarea {background-color:#E3C3C5}
