@@ -3,23 +3,23 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import {
-  EventsListComponent,
-  EventThumbnailComponent,
-  EventService,
-  CreateEventComponent,
-  EventListResolver,
-  EventDetailsComponent,
-  EventRouteActivator,
-  CreateSessionComponent,
-  SessionListComponent,
-} from './events/index'
+  MembersListComponent,
+  MemberThumbnailComponent,
+  MemberService,
+  CreateMemberComponent,
+  MemberListResolver,
+  MemberDetailsComponent,
+  MemberRouteActivator,
+  CreateBeneficiaryComponent,
+  BeneficiaryListComponent,
+} from './members/index'
 
-import { EventsAppComponent } from './events-app.component';
+import { MembersAppComponent } from './members-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { ToastrService } from './common/toastr.service';
 import { appRoutes } from './routes'
 import { Error404Component } from './errors/404.component';
-import { AuthService } from './events/user/auth.service';
+import { AuthService } from './members/user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -30,32 +30,32 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule.forRoot(appRoutes)
   ],
   declarations: [
-    EventsAppComponent,
-    EventsListComponent,
-    EventThumbnailComponent,
-    EventDetailsComponent,
+    MembersAppComponent,
+    MembersListComponent,
+    MemberThumbnailComponent,
+    MemberDetailsComponent,
     NavBarComponent,
-    CreateEventComponent,
+    CreateMemberComponent,
     Error404Component,
-    CreateSessionComponent,
-    SessionListComponent
+    CreateBeneficiaryComponent,
+    BeneficiaryListComponent
   ],
   providers: [
-    EventService, 
+    MemberService, 
     ToastrService, 
-    EventRouteActivator,
+    MemberRouteActivator,
     AuthService,
     {
-    provide: 'canDeactivateCreateEvent',
+    provide: 'canDeactivateCreateMember',
     useValue: checkDirtyState
     },
-    EventListResolver,
+    MemberListResolver,
 ],
-  bootstrap: [EventsAppComponent]
+  bootstrap: [MembersAppComponent]
 })
 export class AppModule { }
 
-export function checkDirtyState(component:CreateEventComponent) {
+export function checkDirtyState(component:CreateMemberComponent) {
   if (component.isDirty)
     return window.confirm('You have not saved this member, do you really want to cancel?')
   return true

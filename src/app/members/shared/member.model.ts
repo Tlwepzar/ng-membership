@@ -1,4 +1,4 @@
-export interface IEvent {
+export interface IMember {
     id: number
     name: string
     surname: string
@@ -9,19 +9,19 @@ export interface IEvent {
     location?: {
         address: string
         city: string
+        zipCode: number
+        province: string
         country: string
     },
     onlineUrl?: string
     status: string
-    sessions: ISession[]
+    beneficiaries: IBeneficiary[]
 }
 
-export interface ISession{
+export interface IBeneficiary{
     id: number
     name: string
-    presenter: string
-    duration: number
-    level: string
-    abstract: string
-    voters: string[]
+    surname: string
+    identityNo: number
+    relationship: string
 }

@@ -1,0 +1,11 @@
+<div class="row" *ngFor="let beneficiary of beneficiaries">
+        <div class="col-md-10">
+          <div class="well">
+              <h4>{{beneficiary.name}}</h4>
+              <h6>{{beneficiary.presenter}}</h6>
+              <span>Duration: {{beneficiary.duration}}</span><br />
+              <span>Level: {{beneficiary.level}}</span>
+              <p>{{beneficiary.abstract}}</p>
+          </div>
+        </div>
+      </div>

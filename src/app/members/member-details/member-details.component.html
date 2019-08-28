@@ -1,0 +1,30 @@
+<div class="container">
+    <img [src]="member?.imageUrl" [alt]="member?.name" class="member-image">
+  
+    <div class="row">
+      <div class="col-md-11">
+        <h2>{{member?.name}} {{member?.surname}}</h2>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div><strong>Membership Number:</strong> {{member?.memberNo}}</div>
+        <div><strong>Identity Number:</strong> {{member?.identityNo}}</div>
+        <div><strong>Joined Date:</strong> {{member?.date | date}}</div>
+      </div>
+      <div class="col-md-6">
+        <address [hidden]="!member?.location?.address">
+          <strong>Address:</strong><br />
+          {{member?.location?.address}}<br />
+          {{member?.location?.city}}, {{member?.location?.country}}
+        </address>
+      </div>
+      <a (click)="addSession()">Add Beneficiary</a>
+    </div><hr>
+    <h2>Beneficiaries</h2><hr>
+    
+  <session-list *ngIf="!addMode" [beneficiaries]="member?.beneficiaries"></session-list>
+  <create-session *ngIf="addMode" (aveNewBeneficiary)="saveNewBeneficiary($member)" (cancelAddBeneficiary)="cancelAddBeneficiary()"></create-session>
+
+</div>
