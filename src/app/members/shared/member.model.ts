@@ -15,7 +15,7 @@ export interface IMember {
     },
     onlineUrl?: string
     status: string
-    beneficiaries: IBeneficiary[]
+    beneficiary: IBeneficiary[]
 }
 
 export interface IBeneficiary{

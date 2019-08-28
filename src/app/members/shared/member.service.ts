@@ -14,13 +14,13 @@ export class MemberService {
     return MEMBERS.find(member => member.id === id)
   }
 
-  saveMember(member){
+  saveMember(member:any) {
     member.id = 1001
-    member.session =[]
+    member.beneficiary =[]
     MEMBERS.push(member)
   }
 
-  updateMember(member) {
+  updateMember(member:any) {
     let index = MEMBERS.findIndex(x  => x.id = member.id)
     MEMBERS[index] = member
   }
@@ -43,7 +43,7 @@ const MEMBERS:IMember[] =  [
             country: 'South Africa',
         },
         status:'active',
-        beneficiaries: [
+        beneficiary: [
         {
           id: 1,
           name: "Gomolemo",
@@ -84,7 +84,7 @@ const MEMBERS:IMember[] =  [
       imageUrl: '/assets/images/ng-nl.png',
       onlineUrl: 'https://lastown.io/members/',
       status:'active',
-      beneficiaries: [
+      beneficiary: [
       {
         id: 1,
         name: "Katekani",
@@ -110,7 +110,7 @@ const MEMBERS:IMember[] =  [
         country: 'South Africa'
       },
       status:'Inactive',
-      beneficiaries: [
+      beneficiary: [
       {
         id: 1,
         name: "Khula",
@@ -143,7 +143,7 @@ const MEMBERS:IMember[] =  [
         country: 'South Africa'
       },
       status:'active',
-      beneficiaries: [
+      beneficiary: [
       {
         id: 1,
         name: "Vhulamfo",
@@ -189,7 +189,7 @@ const MEMBERS:IMember[] =  [
         country: 'South Africa'
       },
       status:'active',
-      beneficiaries: [
+      beneficiary: [
       {
         id: 1,
         name: "Mpho",
@@ -249,7 +249,7 @@ const MEMBERS:IMember[] =  [
         country: 'South Africa'
       },
       status:'active',
-      beneficiaries: [
+      beneficiary: [
       {
         id: 1,
         name: "Jabu",

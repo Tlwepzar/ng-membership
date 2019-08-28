@@ -1,3 +1,5 @@
+import { Routes } from '@angular/router';
+
 import {
     MembersListComponent,
     MemberDetailsComponent,
@@ -8,7 +10,6 @@ import {
 } from './members/index'
 
 import { Error404Component } from './errors/404.component';
-import { Routes } from '@angular/router';
 export const appRoutes:Routes = [
     { path: 'members/new', component: CreateMemberComponent, canDeactivate: ['canDeactivateCreateMember'] },
     { path: 'members', component: MembersListComponent, resolve: {Members:MemberListResolver} },

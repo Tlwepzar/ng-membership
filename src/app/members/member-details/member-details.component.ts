@@ -27,14 +27,14 @@ export class MemberDetailsComponent {
     }
 
     saveNewBeneficiary(beneficiary:IBeneficiary){
-        const nextId = Math.max.apply(null, this.member.beneficiaries.map(s => s.id));
+        const nextId = Math.max.apply(null, this.member.beneficiary.map(s => s.id));
         beneficiary.id = nextId + 1
-        this.member.beneficiaries.push(beneficiary)
+        this.member.beneficiary.push(beneficiary)
         this.memberService.updateMember(this.member)
         this.addMode = false
     }
 
-    cancelAddSession(){
+    cancelAddBeneficiary(){
         this.addMode = false
     }
 }
