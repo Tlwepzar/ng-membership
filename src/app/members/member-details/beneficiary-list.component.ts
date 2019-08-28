@@ -7,7 +7,7 @@ import { IBeneficiary } from '../shared/index';
 })
 
 export class BeneficiaryListComponent implements OnInit {
-    @Input() beneficiaries:IBeneficiary[]
+    @Input() beneficiary:IBeneficiary[]
     
     constructor() { }
 

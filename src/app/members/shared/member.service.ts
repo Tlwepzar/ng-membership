@@ -14,13 +14,13 @@ export class MemberService {
     return MEMBERS.find(member => member.id === id)
   }
 
-  saveMember(member:any) {
+  saveMember(member) {
     member.id = 1001
     member.beneficiary =[]
     MEMBERS.push(member)
   }
 
-  updateMember(member:any) {
+  updateMember(member) {
     let index = MEMBERS.findIndex(x  => x.id = member.id)
     MEMBERS[index] = member
   }

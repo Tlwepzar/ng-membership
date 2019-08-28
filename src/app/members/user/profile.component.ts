@@ -35,10 +35,10 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  saveProfile(formValues){
+  saveProfile(formValues: { firstName: string; lastName: string; }){
     if (this.profileForm.valid) {
       this.authService.updateCurrentUser(formValues.firstName, formValues.lastName)
-      this.router.navigate(['events'])
+      this.router.navigate(['members'])
     }
   }
 
@@ -51,7 +51,7 @@ export class ProfileComponent implements OnInit {
   }
 
   cancel(){
-    this.router.navigate(['events'])
+    this.router.navigate(['members'])
   }
        
 }

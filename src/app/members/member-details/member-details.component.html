@@ -24,7 +24,7 @@
     </div><hr>
     <h2>Beneficiaries</h2><hr>
     
-  <beneficiary-list *ngIf="!addMode" [beneficiaries]="member?.beneficiaries"></beneficiary-list>
-  <create-beneficiary *ngIf="addMode" (aveNewBeneficiary)="saveNewBeneficiary($member)" (cancelAddBeneficiary)="cancelAddBeneficiary()"></create-beneficiary>
+  <beneficiary-list *ngIf="!addMode" [beneficiary]="member?.beneficiary"></beneficiary-list>
+  <create-beneficiary *ngIf="addMode" (saveNewBeneficiary)="saveNewBeneficiary($member)" (cancelAddBeneficiary)="cancelAddBeneficiary()"></create-beneficiary>
 
 </div>

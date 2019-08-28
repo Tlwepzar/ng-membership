@@ -1,11 +1,9 @@
-<div class="row" *ngFor="let beneficiary of beneficiaries">
-        <div class="col-md-10">
-          <div class="well">
-              <h4>{{beneficiary.name}}</h4>
-              <h6>{{beneficiary.presenter}}</h6>
-              <span>Duration: {{beneficiary.duration}}</span><br />
-              <span>Level: {{beneficiary.level}}</span>
-              <p>{{beneficiary.abstract}}</p>
-          </div>
-        </div>
-      </div>
+<div class="row" *ngFor="let beneficiary of beneficiary">
+  <div class="col-md-4">
+    <div class="well">
+      <h4>{{beneficiary.name}} {{beneficiary.surname}}</h4>
+      <span>Id Number: {{beneficiary.identityNo}}</span><br />
+      <span>Relationship: {{beneficiary.relationship}}</span>
+    </div>
+  </div>
+</div>
