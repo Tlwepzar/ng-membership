@@ -17,11 +17,10 @@ declare let toastr
             </div>
         </div>
     </div>
-    `,
+    `
 })
 export class MembersListComponent implements OnInit {
     members:IMember;
-
     constructor(private memberService: MemberService, private toastr: ToastrService, private route:ActivatedRoute){
         
     }

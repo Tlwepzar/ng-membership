@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import {  MemberService} from '../shared/member.service'
+import { MemberService } from '../shared/member.service'
 import { ActivatedRoute } from '@angular/router'
 import { IMember, IBeneficiary } from '../shared/index';
 
@@ -14,6 +14,7 @@ import { IMember, IBeneficiary } from '../shared/index';
 export class MemberDetailsComponent {
     member: IMember
     addMode:boolean
+    filterBy: string = 'all';
 
     constructor (private memberService: MemberService, private route: ActivatedRoute) {
 
