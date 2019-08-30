@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MemberService } from './shared/member.service';
 import { ToastrService } from '../common/toastr.service';
 import { ActivatedRoute } from '@angular/router';
@@ -20,7 +20,8 @@ declare let toastr
     `
 })
 export class MembersListComponent implements OnInit {
-    members:IMember;
+    @Input() public members:IMember;
+
     constructor(private memberService: MemberService, private toastr: ToastrService, private route:ActivatedRoute){
         
     }

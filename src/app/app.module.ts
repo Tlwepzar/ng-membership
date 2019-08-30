@@ -12,6 +12,7 @@ import {
   MemberRouteActivator,
   CreateBeneficiaryComponent,
   BeneficiaryListComponent,
+  DurationPipe,
 } from './members/index'
 
 import { MembersAppComponent } from './members-app.component';
@@ -38,7 +39,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateMemberComponent,
     Error404Component,
     CreateBeneficiaryComponent,
-    BeneficiaryListComponent
+    BeneficiaryListComponent,
+    DurationPipe,
   ],
   providers: [
     MemberService, 

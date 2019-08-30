@@ -10,8 +10,8 @@ export class MemberService {
     return subject
   }
 
-  getMember(id:number):IMember {
-    return MEMBERS.find(member => member.id === id)
+  getMember(id: number):IMember {
+    return MEMBERS.find(members => members.id === id)
   }
 
   saveMember(member) {
@@ -198,7 +198,7 @@ const MEMBERS:IMember[] =  [
         relationship: "child"
       },
       {
-        id:2,
+        id: 2,
         name: "Moeti",
         surname: "Merahe",
         identityNo: 8565757227900,
@@ -211,21 +211,21 @@ const MEMBERS:IMember[] =  [
         relationship: "child"
       },
       {
-        id:4,
+        id: 4,
         name: "Tshepo",
         surname: "Merahe",
         identityNo: 8762876877900,
         relationship: "child"
       },
       {
-        id:5,
+        id: 5,
         name: "Matla",
         surname: "Merahe",
         identityNo: 15141577900,
         relationship: "child"
       },
       {
-        id:6,
+        id: 6,
         name: "Tshepo",
         surname: "Merahe",
         identityNo: 252787633110,
@@ -258,7 +258,7 @@ const MEMBERS:IMember[] =  [
         relationship: "child"
       },
       {
-        id:2,
+        id: 2,
         name: "Vusi",
         surname: "Nkosi",
         identityNo: 8565757227900,
