@@ -81,7 +81,7 @@ const MEMBERS:IMember[] =  [
       memberNo: 'MTE022010',
       identityNo: 8906223155080,
       date: new Date('4/15/2037'),
-      imageUrl: '/assets/images/ng-nl.png',
+      imageUrl: '/assets/images/user-icon.png',
       onlineUrl: 'https://lastown.io/members/',
       status:'active',
       beneficiary: [
@@ -101,7 +101,7 @@ const MEMBERS:IMember[] =  [
       memberNo: 'MTE0454340',
       identityNo: 7111133665080,
       date: new Date('5/4/2037'),
-      imageUrl: '/assets/images/ng-conf.png',
+      imageUrl: '/assets/images/user-icon.png',
       location: {
         address: 'Plot 105, Emfekayi',
         city: 'eMhlathuze',
@@ -134,7 +134,7 @@ const MEMBERS:IMember[] =  [
       memberNo: 'MTE0543190',
       identityNo: 8606253155080,
       date: new Date('6/10/2037'),
-      imageUrl: '/assets/images/basic-shield.png',
+      imageUrl: '/assets/images/user-icon.png',
       location: {
         address: '2087 Mntane Str',
         city: 'Duduza',
@@ -180,7 +180,7 @@ const MEMBERS:IMember[] =  [
       memberNo: 'MTE880298',
       identityNo: 8802189144080,
       date: new Date('2/10/2037'),
-      imageUrl: '/assets/images/ng-vegas.png',
+      imageUrl: '/assets/images/user-icon.png',
       location: {
         address: '876 Setlareng Str',
         city: 'Mahikeng',
@@ -240,11 +240,11 @@ const MEMBERS:IMember[] =  [
       memberNo: 'MTE456789',
       identityNo: 92070822110080,
       date: new Date('6/10/2037'),
-      imageUrl: '/assets/images/basic-shield.png',
+      imageUrl: '/assets/images/user-icon.png',
       location: {
-        address: 'The UN Angular Center',
-        city: 'New York',
-        zipCode: 2005,
+        address: '9886 Mjondolo Str',
+        city: 'Kwa Thema',
+        zipCode: 1575,
         province: 'Gauteng',
         country: 'South Africa'
       },

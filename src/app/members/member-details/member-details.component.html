@@ -19,8 +19,9 @@
           {{member?.location?.address}}<br />
           {{member?.location?.city}}, {{member?.location?.country}}
         </address>
-      </div>
-      <a (click)="addBeneficiary()">Add Beneficiary</a>
+        <div [hidden]="!member?.onlineUrl"><strong>Online Url: </strong>{{member?.onlineUrl}}</div>
+        <a class="addButton" (click)="addBeneficiary()">Add Beneficiary</a>
+      </div><br />
     </div><hr>
     <h2>Beneficiaries</h2><hr>
     
