@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { MemberService } from './shared/member.service';
 import { ToastrService } from '../common/toastr.service';
 import { ActivatedRoute } from '@angular/router';
@@ -30,7 +30,7 @@ export class MembersListComponent implements OnInit {
         this.members = this.route.snapshot.data['members']
     }
 
-    handleThumbnailClick(memberName){
-        this.toastr.success(memberName)
+    handleThumbnailClick(members: string){
+        this.toastr.success(members)
     }
 }

@@ -4,6 +4,7 @@ import { IMember } from './member.model';
 
 @Injectable()
 export class MemberService {
+  member: IMember;
   getMembers() :Observable<IMember[]> {
     let subject = new Subject<IMember[]>()
     setTimeout(() => {subject.next(MEMBERS); subject.complete(); },100)
