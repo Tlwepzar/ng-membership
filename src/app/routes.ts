@@ -17,6 +17,6 @@ export const appRoutes:Routes = [
     { path: 'members/beneficiary/new', component: CreateBeneficiaryComponent },
     { path: '404', component: Error404Component },
     { path: '', redirectTo: '/members', pathMatch: 'full' },
-    { path: 'user', loadChildren: '/Users/tshepang/Documents/Angular/membership-system-ng/src/app/members/user/user.module#UserModule'},
+    { path: 'user', loadChildren: '/Users/tshepang/Documents/Angular/ng-membership/src/app/members/user/user.module#UserModule'},
    
 ]
