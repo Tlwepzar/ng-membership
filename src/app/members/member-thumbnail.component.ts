@@ -8,7 +8,7 @@ import { IMember } from './shared/index'
     <h2> {{member?.name}} {{member?.surname}} </h2>
     <div><strong>Membership Number:</strong> {{member?.memberNo}}</div>
     <div><strong>Joined Date:</strong> {{member?.date | date}} </div>
-    <h5 [ngStyle]="getMembershipStatus()"><strong>Membership Status:</strong>{{member?.status}}</h5>
+    <h5 [ngStyle]="getMembershipStatus()"><strong>Membership Status: </strong>{{member?.status}}</h5>
     <div [hidden]="!member?.location?.address">
         <span><strong>Location:</strong> {{member?.location?.address}}</span>
         <span class="pad-left"> {{member?.location?.city}}, {{member?.location?.country}}</span>
@@ -26,9 +26,11 @@ export class MemberThumbnailComponent {
     @Input() member:IMember;
     getMembershipStatus():any {
         if (this.member && this.member.status === 'active')
-            return { color: '#003300', 'font-weight': 'bold'}
+            return { color: 'rgb(49, 155, 58)', 'font-weight': 'bold'}
         else if (this.member && this.member.status === 'Inactive')
-            return { color: '#FF7B2E', 'font-weight': 'bold'} 
+            return { color: 'rgb(214, 21, 21)', 'font-weight': 'bold'} 
+        else if (this.member && this.member.status === 'processing')
+            return { color: 'rgb(235, 117, 6)', 'font-weight': 'bold'} 
         return{}
     }
 }

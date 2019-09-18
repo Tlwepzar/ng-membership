@@ -10,6 +10,6 @@ export class MemberListResolver implements Resolve<any> {
         
     }
     resolve() {
-        return this.memberService.getMembers().pipe(map(members => members))
+        return this.memberService.getMembers()
     }
 }

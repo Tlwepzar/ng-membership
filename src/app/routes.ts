@@ -12,7 +12,7 @@ import {
 import { Error404Component } from './errors/404.component';
 export const appRoutes:Routes = [
     { path: 'members/new', component: CreateMemberComponent, canDeactivate: ['canDeactivateCreateMember'] },
-    { path: 'members', component: MembersListComponent, resolve: {Members:MemberListResolver} },
+    { path: 'members', component: MembersListComponent, resolve: {members:MemberListResolver} },
     { path: 'members/:id', component: MemberDetailsComponent, canActivate: [MemberRouteActivator] },
     { path: 'members/beneficiary/new', component: CreateBeneficiaryComponent },
     { path: '404', component: Error404Component },

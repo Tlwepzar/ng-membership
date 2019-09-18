@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Subject, Observable } from 'rxjs'
+import { Subject, Observable, of } from 'rxjs'
 import { IMember } from './member.model';
 
 @Injectable()
@@ -25,6 +25,14 @@ export class MemberService {
     let index = MEMBERS.findIndex(x  => x.id = member.id)
     MEMBERS[index] = member
   }
+
+  private handleError<T> (operation= 'operation', result?:T){
+    return (error:any): Observable<T> => {
+      console.error(error);
+      return of (result as T);
+    }
+  }
+  
 }
 
 const MEMBERS:IMember[] =  [
@@ -84,7 +92,7 @@ const MEMBERS:IMember[] =  [
       date: new Date('4/15/2037'),
       imageUrl: '/assets/images/user-icon.png',
       onlineUrl: 'https://lastown.io/members/',
-      status:'active',
+      status:'processing',
       beneficiary: [
       {
         id: 1,
@@ -249,7 +257,7 @@ const MEMBERS:IMember[] =  [
         province: 'Gauteng',
         country: 'South Africa'
       },
-      status:'active',
+      status:'processing',
       beneficiary: [
       {
         id: 1,

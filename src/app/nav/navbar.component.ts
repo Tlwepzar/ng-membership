@@ -10,7 +10,7 @@ import { AuthService } from '../members/user/auth.service';
     #searchForm {margin-right: 100px;}
     #searchButton {margin-left: 20px;}
     @media (max-width:1200px) {#searchForm {displya:none}}
-    li > a.active { color: #CCFF00; }
+    li > a.active { color: rgb(0, 0, 0); }
     `
     ]
 })
