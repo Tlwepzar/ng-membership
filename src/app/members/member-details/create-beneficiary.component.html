@@ -18,6 +18,11 @@
             <em *ngIf="identityNo.invalid && identityNo.dirty">Required</em>
             <input formControlName="identityNo" id="beneficiaryIdentityNo" type="text" class="form-control" placeholder="Beneficiary ID No..." />
           </div>
+          <div class="form-group" [ngClass]="{'error': relationship.invalid && relationship.dirty}">
+            <label for="BeneficiaryReationship">Beneficiary Relationship:</label>
+            <em *ngIf="relationship.invalid && relationship.dirty">Required</em>
+            <input formControlName="relationship" type="text" class="form-control" placeholder="Relationship with Member...">
+          </div>
 
           <button type="submit" [disabled]="newBeneficiaryForm.invalid" class="btn btn-primary">Save</button>
           <button type="button" (click)="cancel()" class="btn btn-default">Cancel</button>

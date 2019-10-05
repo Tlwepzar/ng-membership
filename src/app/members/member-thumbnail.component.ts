@@ -11,14 +11,14 @@ import { IMember } from './shared/index'
     <h5 [ngStyle]="getMembershipStatus()"><strong>Membership Status: </strong>{{member?.status}}</h5>
     <div [hidden]="!member?.location?.address">
         <span><strong>Location:</strong> {{member?.location?.address}}</span>
-        <span class="pad-left"> {{member?.location?.city}}, {{member?.location?.country}}</span>
+        <span class="pad-left"> {{member?.location?.city}}, {{member?.location?.country}}, {{member?.location?.zipCode}} </span>
     </div>
     <div *ngIf="member?.onlineUrl"><strong>
         Online URL:</strong> {{member?.onlineUrl}}
     </div>
 </div>`,
 styles: [`
-.thumbnail { min-height: 205px; }
+.thumbnail { height: 220px; }
 .well div { color: grey; }
 `]
 })

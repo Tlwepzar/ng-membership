@@ -6,6 +6,8 @@ import { Router } from '@angular/router'
     templateUrl: './login.component.html',
     styles: [`
         em { float:right; color:#E05C65; padding-left:10px; }
+        button { width:45%; }
+        .btn-primary { margin-right:10%; }
     `]
 })
 export class LoginComponent {
@@ -19,7 +21,7 @@ export class LoginComponent {
 
     login(formValues){
         this.authService.loginUser(formValues.username, formValues.password)
-        this.router.navigate(['members'])
+        this.router.navigate(['home'])
         console.log(formValues)
     }
 

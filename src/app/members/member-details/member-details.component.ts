@@ -7,8 +7,9 @@ import { IMember, IBeneficiary } from '../shared/index';
     templateUrl: 'member-details.component.html',
     styles: [`
     .container { padding-left:20px; padding-right: 20px; }
-    .member-image { height: 100px; }
-    a {cursor:pointer;}
+    .member-image { margin-right:20px; height: 100px; float: left; }
+    a { cursor:pointer;}
+    h2 { float:left; margin-right: 100px; }
     `]
 })
 export class MemberDetailsComponent {

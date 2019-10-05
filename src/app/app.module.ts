@@ -17,11 +17,20 @@ import {
 
 import { MembersAppComponent } from './members-app.component';
 import { NavBarComponent } from './nav/navbar.component';
-import { ToastrService } from './common/toastr.service';
+import { 
+  JQ_TOKEN,
+  TOASTR_TOKEN,
+  Toastr, 
+  SimpleModalComponent, 
+  ModalTriggerDirective } from './common/index';
 import { appRoutes } from './routes'
 import { Error404Component } from './errors/404.component';
 import { AuthService } from './members/user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './members/home.component';
+
+let toastr:Toastr = window['toastr'];
+let jQuery = window['$'];
 
 @NgModule({
   imports: [
@@ -31,6 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule.forRoot(appRoutes)
   ],
   declarations: [
+    HomeComponent,
     MembersAppComponent,
     MembersListComponent,
     MemberThumbnailComponent,
@@ -40,11 +50,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Error404Component,
     CreateBeneficiaryComponent,
     BeneficiaryListComponent,
+    SimpleModalComponent,
+    ModalTriggerDirective,
     DurationPipe,
   ],
   providers: [
     MemberService, 
-    ToastrService, 
+    { provide: TOASTR_TOKEN, useValue: toastr}, 
+    { provide: JQ_TOKEN, useValue: jQuery}, 
     MemberRouteActivator,
     AuthService,
     {

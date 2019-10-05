@@ -1,10 +1,9 @@
-import { Injectable } from '@angular/core'
+import { Injectable, EventEmitter } from '@angular/core'
 import { Subject, Observable, of } from 'rxjs'
-import { IMember } from './member.model';
+import { IMember, IBeneficiary } from './member.model';
 
 @Injectable()
 export class MemberService {
-  member: IMember;
   getMembers() :Observable<IMember[]> {
     let subject = new Subject<IMember[]>()
     setTimeout(() => {subject.next(MEMBERS); subject.complete(); },100)
@@ -31,6 +30,27 @@ export class MemberService {
       console.error(error);
       return of (result as T);
     }
+  }
+
+  searchBeneficiaries(searchTerm: string){
+    var term = searchTerm.toLocaleLowerCase();
+    var results: IBeneficiary[]=[];
+  
+    MEMBERS.forEach(member => {
+      var matchingBeneficiaries = member.beneficiary.filter(beneficiary =>
+        beneficiary.surname.toLocaleLowerCase().indexOf(term) > -1);
+        matchingBeneficiaries = matchingBeneficiaries.map((beneficiary:any) => {
+        beneficiary.memberId = member.id;
+        return beneficiary;
+      })
+      results = results.concat(matchingBeneficiaries);
+    })
+  
+    var emitter = new EventEmitter(true);
+    setTimeout(() => {
+      emitter.emit(results);
+    },100);
+    return emitter;
   }
   
 }
@@ -91,7 +111,14 @@ const MEMBERS:IMember[] =  [
       identityNo: 8906223155080,
       date: new Date('4/15/2037'),
       imageUrl: '/assets/images/user-icon.png',
-      onlineUrl: 'https://lastown.io/members/',
+      onlineUrl: 'https://lastown.io/mhlanga/',
+      location: {
+        address: 'Plot 105, Emfekayi',
+        city: 'eMhlathuze',
+        zipCode: 3005,
+        province: 'KwaZulu Natal',
+        country: 'South Africa'
+      },
       status:'processing',
       beneficiary: [
       {
@@ -109,7 +136,7 @@ const MEMBERS:IMember[] =  [
       surname: 'Mdluli',
       memberNo: 'MTE0454340',
       identityNo: 7111133665080,
-      date: new Date('5/4/2037'),
+      date: new Date('5/4/2018'),
       imageUrl: '/assets/images/user-icon.png',
       location: {
         address: 'Plot 105, Emfekayi',
@@ -139,10 +166,10 @@ const MEMBERS:IMember[] =  [
     {
       id: 4,
       name: 'Brian',
-      surname: 'Mowkena',
+      surname: 'Mokwena',
       memberNo: 'MTE0543190',
       identityNo: 8606253155080,
-      date: new Date('6/10/2037'),
+      date: new Date('6/10/2019'),
       imageUrl: '/assets/images/user-icon.png',
       location: {
         address: '2087 Mntane Str',
@@ -156,27 +183,27 @@ const MEMBERS:IMember[] =  [
       {
         id: 1,
         name: "Vhulamfo",
-        surname: "Mowkena",
+        surname: "Mokwena",
         identityNo: 130418077900,
         relationship: "child"
       },
       {
         id:2,
         name: "Nlovukazi",
-        surname: "Mowkena",
+        surname: "Mokwena",
         identityNo: 8762876877900,
         relationship: "child"
       },{
         id: 3,
         name: "Sipho",
-        surname: "Mowkena",
+        surname: "Mokwena",
         identityNo: 130418077900,
         relationship: "child"
       },
       {
         id:4,
         name: "Tshepo",
-        surname: "Mowkena",
+        surname: "Mokwena",
         identityNo: 8762876877900,
         relationship: "child"
       },
@@ -188,7 +215,7 @@ const MEMBERS:IMember[] =  [
       surname: 'Merahe',
       memberNo: 'MTE880298',
       identityNo: 8802189144080,
-      date: new Date('2/10/2037'),
+      date: new Date('2/10/2020'),
       imageUrl: '/assets/images/user-icon.png',
       location: {
         address: '876 Setlareng Str',

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IBeneficiary, restrictedWords  } from '../shared/index';
 
@@ -7,6 +7,8 @@ import { IBeneficiary, restrictedWords  } from '../shared/index';
     templateUrl: 'create-beneficiary.component.html',
     styles: [`
     em {float:right; color:#E05C65; padding-left:10px;}
+    button { width:45%; }
+    .btn-primary { margin-right:10%; }
     .error input, .error select, .error textarea {background-color:#E3C3C5}
     .error ::-webkit-input-placeholder {color:#999}
     .error ::-moz-placeholder {color:#999}
@@ -20,7 +22,7 @@ import { IBeneficiary, restrictedWords  } from '../shared/index';
 export class CreateBeneficiaryComponent implements OnInit {
     constructor() { }
 
-    @Output() saveNewBeneficiary = new EventEmitter()
+    @Input() saveNewBeneficiary = new EventEmitter()
     @Output() cancelAddBeneficiary = new EventEmitter()
 
     newBeneficiaryForm:FormGroup
@@ -45,13 +47,12 @@ export class CreateBeneficiaryComponent implements OnInit {
 
     saveBeneficiary(formValues){
         let beneficiary: IBeneficiary = {
-            id: undefined,
+            id: +formValues.id ,
             name: formValues.name,
-            surname: formValues.name,
+            surname: formValues.surname,
             identityNo: +formValues.duration,
             relationship: formValues.relationship,
         }
-
         this.saveNewBeneficiary.emit(beneficiary)
         console.log(beneficiary);
     }

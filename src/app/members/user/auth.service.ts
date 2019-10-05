@@ -8,8 +8,8 @@ export class AuthService {
         this.currentUser = {
             id: 1,
             userName: userName,
-            firstName:'Mega',
-            lastName: 'Tlwepzar'
+            firstName:'Kagiso',
+            lastName: 'Mahuwalani'
         }
     }
 
