@@ -1,0 +1,63 @@
+<h1>New Member</h1>
+<hr>
+<div class="col-md-6">
+  <form #newMemberForm="ngForm" (ngSubmit)="saveMember(newMemberForm.value)" autocomplete="off" novalidate>
+    
+    <div class="form-group" [ngClass]="{'error': newMemberForm.controls.name?.invalid && newMemberForm.controls.name?.touched}">
+      <label for="MemberName">Member's Name:</label>
+      <em *ngIf="newMemberForm.controls.name?.invalid && (newMemberForm.controls.name?.touched)">Required</em>
+      <input (ngModel)="newMember.name" name="name" required id="name" type="text" class="form-control" placeholder="Name of new member..." />
+    </div>
+
+    <div class="form-group" [ngClass]="{'error': newMemberForm.controls.surname?.invalid && newMemberForm.controls.surname?.touched}">
+      <label for="MemberSurname">Member's Surname:</label>
+      <em *ngIf="newMemberForm.controls.surname?.invalid && (newMemberForm.controls.surname?.touched)">Required</em>
+      <input (ngModel)="newMember.surname" name="surname" required id="surname" type="text" class="form-control" placeholder="Surname of new member..." />
+    </div>
+
+    <div class="form-group" [ngClass]="{'error': newMemberForm.controls.identityNo?.invalid && newMemberForm.controls.identityNo?.touched}">
+      <label for="MemberIdentityNo">Members's Identity No:</label>
+      <em *ngIf="newMemberForm.controls.identityNo?.invalid && (newMemberForm.controls.identityNo?.touched)">Required</em>
+      <input (ngModel)="newMember.identityNo" name="identityNo" required id="identityNo" type="text" class="form-control" placeholder="Identity No. of new member...">
+    </div>
+    
+    <div class="form-group" [ngClass]="{'error': newMemberForm.controls.date?.invalid && newMemberForm.controls.date?.touched}">
+      <label for="MemberDate">Joined Date:</label>
+      <em *ngIf="newMemberForm.controls.date?.invalid && (newMemberForm.controls.date?.touched)">Required</em>
+      <input (ngModel)="date" name="date" required id="MemberDate" type="text" class="form-control" placeholder="format (mm/dd/yyyy)..." />
+    </div>
+    
+    <div ngModelGroup="Location">
+        <div class="form-group">
+          <label for="address">Member's Address:</label>
+          <input (ngModel)="newMember.address" name="address" id="address" type="text" class="form-control" placeholder="Address of member..." />
+        </div>
+          
+        <div class="row">
+          <div class="col-md-5">
+            <input (ngModel)="newMember.city" name="city" id="city" type="text" class="form-control" placeholder="City..." />
+          </div>
+          
+          <div class="col-md-7" >
+            <input (ngModel)="newMember.country" name="country" id="country" type="text" class="form-control" placeholder="Country..." />
+          </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="onlineUrl">Online Url:</label>
+      <input (ngModel)="newMember.onlineUrl" name="onlineUrl" id="onlineUrl" type="text" class="form-control" placeholder="Social Media Url..." />
+    </div>
+    
+    <div class="form-group" [ngClass]="{'error': newMemberForm.controls.imageUrl?.invalid && newMemberForm.controls.imageUrl?.touched}">
+      <label for="imageUrl">Profile Image:</label>
+      <em *ngIf="newMemberForm.controls.imageUrl?.invalid && newMemberForm.controls.imageUrl?.touched && newMemberForm.controls.imageUrl?.errors.required">Required</em>
+      <em *ngIf="newMemberForm.controls.imageUrl?.invalid && newMemberForm.controls.imageUrl?.touched  && newMemberForm.controls.imageUrl?.errors.pattern">Must be a png or jpg url</em>
+      <input (ngModel)="newMember.imageUrl" name="imageUrl" required pattern=".*\/.*.(png|jpg)" id="imageUrl" type="text" class="form-control" placeholder="url of profile image..." />
+      <img [src]="newMemberForm.controls.imageUrl.value" *ngIf="newMemberForm.controls.imageUrl?.valid"/>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="button" [disabled]="newMemberForm.invalid" class="btn btn-default" (click)="cancel()">Cancel</button>
+  </form>
+</div>
