@@ -13,7 +13,6 @@ import { MemberService } from './shared';
     .error :-moz-placeholder {color:#999}
     .error :-ms-input-placeholder {color:#999}
     .btn-primary { margin-right:10%; }
-    #cancel {margin-left: 230px;}
     `
     ]
 

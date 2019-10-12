@@ -6,7 +6,7 @@ import { IBeneficiary, MemberService } from '../members';
     selector: 'nav-bar',
     templateUrl: './navbar.component.html',
     styles: [`
-    .nav.navbar-nav {font-size 15px;}
+    .nav.navbar-nav {font-size 15px; }
     img { height: 50px; }
     #searchForm {margin-right: 50px;}
     #searchButton {margin-left: 20px;}

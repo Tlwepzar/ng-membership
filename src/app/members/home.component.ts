@@ -5,11 +5,11 @@ import { Component, OnInit } from '@angular/core';
     template: `
     <h1> Welcome Comrades </h1>
     <hr>
-    <img src="assets/images/home.png" alt="home.png">
+    <img src="assets/images/marching.png" alt="home.png">
     `,
     styles: [` 
     h1 { text-align: center; }
-    img { width: 1150px;}
+    img { width: 70%; margin-left: 15%;}
     `]
 })
 

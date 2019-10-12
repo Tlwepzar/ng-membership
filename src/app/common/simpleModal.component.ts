@@ -4,7 +4,7 @@ import { JQ_TOKEN } from './jQuery.service'
 @Component({
     selector: 'simple-modal',
     template: `
-    <div id="{{elementId}}" #modalcontainer class="modal fade" tabindex="-1">
+    <div id="simple-modal" #modalcontainer class="modal fade" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -20,6 +20,7 @@ import { JQ_TOKEN } from './jQuery.service'
     `,
     styles: [`
         .modal-body { height: 250px; overflow-y: scroll; }
+        .modal-dialog { width: 400px;}
     `]
 })
 
@@ -27,14 +28,14 @@ export class SimpleModalComponent{
     @Input() title: string;
     @Input() elementId: string;
     @Input() closeOnBodyClick: string;
-    /*@ViewChild('modelcontainer') containerEl: ElementRef;
+    //@ViewChild('modelContainer', {static:true}) containerEl: ElementRef;
 
     constructor(@Inject(JQ_TOKEN) private $: any){
 
     }
 
     closeModal() {
-        if(this.closeOnBodyClick.toLocaleLowerCase() === "true")
-        this.$(this.containerEl.nativeElement).modal('hide')
-    }*/
+        //if(this.closeOnBodyClick.toLocaleLowerCase() === "true")
+        //this.$(this.containerEl.nativeElement).modal('hide')
+    }
 }
